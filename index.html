@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-box">
+        <input type="text" placeholder="Search for a city..." id="cityInput" />
+        <button onclick="getWeather()">
+          <i class="fas fa-search"></i>
+          Search
+        </button>
+      </div>
+
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+      </div>
+
+      <div class="error" id="error">
+        <i class="fas fa-exclamation-circle"></i>
+        City not found. Please try again.
+      </div>
+
+      <div class="weather-info" id="weatherInfo" style="display: none">
+        <img id="weatherIcon" class="weather-icon" src="" alt="Weather Icon" />
+        <div class="temperature">
+          <span id="temp">0</span>
+          <span class="units" id="units" onclick="toggleUnits()">°C</span>
+        </div>
+        <h2 id="cityName">City Name</h2>
+        <p id="description">Weather Description</p>
+
+        <div class="details">
+          <div class="detail-item">
+            <div class="detail-label">
+              <i class="fas fa-tint"></i>
+              Humidity
+            </div>
+            <div class="detail-value" id="humidity">0%</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">
+              <i class="fas fa-wind"></i>
+              Wind Speed
+            </div>
+            <div class="detail-value" id="windSpeed">0 km/h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
